@@ -1,3 +1,4 @@
+import time
 import sys
 
 commands = ['add', 'mark', 'list', 'archive', 'x']
@@ -19,6 +20,10 @@ def menu(give_outprint_menu):
         elif give_outprint_menu == 'x':
             return quit()
 
+        else:
+            print("I can't understant you.")
+            time.sleep(1)
+            #menu()
 
 
 def add():
