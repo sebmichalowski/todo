@@ -9,20 +9,21 @@ outprint_menu = input('Please specify a command [list, add, mark, archive]: ')
 
 
 def menu(arg):
-    if arg == 'add':
-        add()
-    elif arg == 'mark':
-        mark()
-    elif arg == 'list':
+    outprint_menu
+        if arg == 'add':
+            add()
+        elif arg == 'mark':
+            mark()
+        elif arg == 'list':
 
-    elif arg == 'archive':
-        pass
-    elif arg == 'x':
-        quit()
-    else:
-        print("I can't understant you.")
-        time.sleep(1)
-        #menu()
+        elif arg == 'archive':
+            pass
+        elif arg == 'x':
+            quit()
+        else:
+            print("I can't understant you.")
+            time.sleep(1)
+            #menu()
 
 
 def add():
@@ -35,7 +36,7 @@ def mark():
 def listing_tasks(arg):
     print(you_saved)
     user_list_print(arg)
-    outprint_menu
+    menu(arg)
 
 
 def user_list_print(arg):
