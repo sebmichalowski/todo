@@ -1,4 +1,5 @@
-inport sys
+import time
+import sys
 
 commands = ['add', 'mark', 'list', 'archive', 'x']
 todo_list = [0]
@@ -18,6 +19,10 @@ def menu(arg):
         pass
     elif arg == 'x':
         quit()
+    else:
+        print("I can't understant you.")
+        time.sleep(1)
+        #menu()
 
 
 def add():
