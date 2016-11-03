@@ -3,14 +3,17 @@ inport sys
 commands = ['add', 'mark', 'list', 'archive', 'x']
 todo_list = [0]
 
+you_saved = 'You saved the following to-do items: \n'
+outprint_menu = input('Please specify a command [list, add, mark, archive]: ')
+
 
 def menu(arg):
     if arg == 'add':
-        pass
+        add()
     elif arg == 'mark':
-        pass
+        mark()
     elif arg == 'list':
-        pass
+
     elif arg == 'archive':
         pass
     elif arg == 'x':
@@ -21,12 +24,18 @@ def add():
     todo_list.append(input('Add an item: '))
 
 def mark():
-    pass
+
 
 
 def listing_tasks(arg):
-        for item in range(len(arg)):
-            print('[]''{}' .format(,arg[item]))
+    print(you_saved)
+    user_list_print(arg)
+    outprint_menu
+
+
+def user_list_print(arg):
+    for item in range(len(arg)):
+        print('[]''{}' .format(,arg[item]))
 
 
 def main():
