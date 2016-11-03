@@ -14,7 +14,7 @@ def menu(give_outprint_menu):
         elif give_outprint_menu == 'mark':
             mark()
         elif give_outprint_menu == 'list':
-            return listing_tasks(arg)
+            return listing_tasks(todo_list)
         elif give_outprint_menu == 'archive':
             pass
         elif give_outprint_menu == 'x':
@@ -31,6 +31,7 @@ def add():
 
 
 def mark():
+    pass
 
 
 
@@ -41,12 +42,11 @@ def listing_tasks(give_saved_list):
 
 def user_list_print(give_list):
     for item in range(len(give_list)):
-        print('[]''{}' .format(,arg[item]))
+        print('[]''{}' .format(give_list[item]))
 
 
 def main():
     outprint_menu
-    add()
-    listing_tasks(todo_list)
+    menu()
 
 main()
