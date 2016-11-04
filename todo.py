@@ -2,32 +2,36 @@ import time
 import sys
 
 commands = ['add', 'mark', 'list', 'archive', 'x']
-todo_list = [0]
+todo_list = []
 
 you_saved = 'You saved the following to-do items: \n'
 global outprint_menu
-outprint_menu = input('Please specify a command [list, add, mark, archive]: ')
 
-def menu(give_outprint_menu):
-    if give_outprint_menu == 'add':
+
+def menu():
+    outprint_menu = input('Please specify a command [list, add, mark, archive]: ')
+    if outprint_menu == 'add':
         add()
-        return main()
-    elif give_outprint_menu == 'mark':
+        main()
+    elif outprint_menu == 'mark':
         mark()
-    elif give_outprint_menu == 'list':
+    elif outprint_menu == 'list':
         return listing_tasks(todo_list)
-    elif give_outprint_menu == 'archive':
+    elif outprint_menu == 'archive':
         pass
-    elif give_outprint_menu == 'x':
+    elif outprint_menu == 'x':
         return quit()
     else:
         print("I can't understant you.")
-        time.sleep(1)
-        return main()
+        menu()
 
 
 def add():
     todo_list.append(input('Add an item: '))
+    inside_add()
+
+
+def inside_add():
     add_next = (input('add another one? y/n'))
     if add_next == 'y':
         add()
@@ -35,12 +39,11 @@ def add():
         main()
     else:
         print("I can't understant you.")
-        time.sleep(1)
-    return main()
+        inside_add()
+
 
 def mark():
     pass
-
 
 
 def listing_tasks(give_saved_list):
@@ -54,8 +57,7 @@ def user_list_print(give_list):
 
 
 def main():
-    outprint_menu
-    menu(outprint_menu)
+    menu()
 
 
 main()
